@@ -14,7 +14,7 @@ exports.placeholder = ->
 
 exports.validate = (config, validators) ->
   errors = []
-  if validators.ifExistsIsObject(errors, "minify config", config.testem)
+  #if validators.ifExistsIsObject(errors, "minify config", config.testem)
     # do something
 
   errors

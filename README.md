@@ -1,4 +1,4 @@
-mimosa-foo
+mimosa-testem
 ===========
 
 A RequireJS based implementation of Testem support for Mimosa

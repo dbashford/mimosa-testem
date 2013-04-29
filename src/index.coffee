@@ -1,6 +1,8 @@
 "use strict"
 
 config = require './config'
+ci = require './testem-ci'
+
 
 registration = (mimosaConfig, register) ->
   if mimosaConfig.isBuild or mimosaConfig.isWatch
@@ -9,9 +11,7 @@ registration = (mimosaConfig, register) ->
     register ['add','update','remove'], 'afterOptimize', _runTests, e.javascript
 
 _runTests = (mimosaConfig, options, next) ->
-  for file in options.files
-    file.outputFileText = minify(file.outputFileText)
-  next()
+  ci(mimosaConfig, next)
 
 registerCommand = (program, retrieveConfig) ->
   program
