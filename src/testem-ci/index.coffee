@@ -3,21 +3,25 @@
 exec = require('child_process').exec
 path = require('path')
 logger = require('logmimosa')
-
+testUtil = require('./util')
 
 testemCiCommand = path.join(__filename, "../../../node_modules/.bin/testem") + " ci"
 
-runTestemCi = (config, next) ->
-
+module.exports = (config, next) ->
   exec testemCiCommand, (error, stdout, stderr) ->
+    testsPassed = testUtil.parseTestsSuccessful( stdout )
     if error
-      logger.error "mimosa-testem: testem execution failed ", error
-      return next()
-
-    console.log "*******************"
-    console.log stdout
-    console.log "*******************"
+      testsFailed = testUtil.parseTestsFailed( stdout )
+      totalTests = testsFailed + testsPassed
+      logger.error "#{testsFailed} of #{totalTests} tests failed."
+      if config.isBuild
+        console.error stdout
+      else
+        console.error testUtil.craftErrorOutput(stdout)
+    else
+      logger.success "#{testsPassed} of #{testsPassed} tests passed."
+      if config.isBuild
+        console.log stdout
 
     next()
 
-module.exports = runTestemCi

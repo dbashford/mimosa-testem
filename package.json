@@ -1,9 +1,9 @@
 {
-  "name": "mimosa-testem",
-  "version": "0.0.1",
-  "homepage": "https://github.com/dbashford/mimosa-testem",
+  "name": "mimosa-testem-simple",
+  "version": "0.1.0",
+  "homepage": "https://github.com/dbashford/mimosa-testem-simple",
   "author": "David Bashford",
-  "description": "A RequireJS based implementation of Testem support for Mimosa",
+  "description": "A simple testem integration Mimosa module",
   "contributors": [
     {
       "name": "David Bashford",
@@ -12,20 +12,19 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dbashford/mimosa-testem"
+    "url": "https://github.com/dbashford/mimosa-testem-simple"
   },
   "keywords": [
     "mimosa",
     "mmodule",
     "testem",
-    "requirejs",
     "testing",
     "test",
     "phantomjs"
   ],
   "dependencies": {
     "logmimosa": "0.4.0",
-    "testem": "0.2.90"
+    "testem": "0.2.94"
   },
   "main": "./lib/index",
   "scripts": {
