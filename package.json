@@ -23,8 +23,8 @@
     "phantomjs"
   ],
   "dependencies": {
-    "logmimosa": "0.4.0",
-    "testem": "0.2.94"
+    "logmimosa": "0.5.0",
+    "testem": "0.2.95"
   },
   "main": "./lib/index",
   "scripts": {
