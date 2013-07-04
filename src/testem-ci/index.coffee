@@ -27,20 +27,7 @@ _execWindowsIsAwesome = (config, next) ->
       # stdout not reliable, reading it from log file
       stdout = fs.readFileSync outFile, "utf8"
       fs.unlinkSync outFile
-      testsPassed = testUtil.parseTestsSuccessful( stdout )
-
-      if error
-        testsFailed = testUtil.parseTestsFailed( stdout )
-        totalTests = testsFailed + testsPassed
-        logger.error "#{testsFailed} of #{totalTests} tests failed."
-        if config.isBuild
-          console.error stdout
-        else
-          console.error testUtil.craftErrorOutput(stdout)
-      else
-        logger.success "#{testsPassed} of #{testsPassed} tests passed."
-        if config.isBuild
-          console.log stdout
+      _processOutput stdout, config, error
     else
       logger.error "Test execution resulted in no output."
 
@@ -48,19 +35,20 @@ _execWindowsIsAwesome = (config, next) ->
 
 _exec = (config, next) ->
   exec testemCiCommand, (error, stdout) ->
-    testsPassed = testUtil.parseTestsSuccessful( stdout )
-    if error
-      testsFailed = testUtil.parseTestsFailed( stdout )
-      totalTests = testsFailed + testsPassed
-      logger.error "#{testsFailed} of #{totalTests} tests failed."
-      if config.isBuild
-        console.error stdout
-      else
-        console.error testUtil.craftErrorOutput(stdout)
-    else
-      logger.success "#{testsPassed} of #{testsPassed} tests passed."
-      if config.isBuild
-        console.log stdout
-
+    _processOutput stdout, config, error
     next()
 
+_processOutput = (stdout, config, error) ->
+  testsPassed = testUtil.parseTestsSuccessful( stdout )
+  if error
+    testsFailed = testUtil.parseTestsFailed( stdout )
+    totalTests = testsFailed + testsPassed
+    logger.error "#{testsFailed} of #{totalTests} tests failed."
+    if config.isBuild
+      console.error stdout
+    else
+      console.error testUtil.craftErrorOutput(stdout)
+  else
+    logger.success "#{testsPassed} of #{testsPassed} tests passed."
+    if config.isBuild
+      console.log stdout
