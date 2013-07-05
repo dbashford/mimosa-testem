@@ -1,6 +1,7 @@
 "use strict"
 
 ci = require './testem-ci'
+config = require './config'
 
 registration = (mimosaConfig, register) ->
   if mimosaConfig.isBuild or mimosaConfig.isWatch
@@ -12,4 +13,7 @@ _runTests = (mimosaConfig, options, next) ->
   ci mimosaConfig, next
 
 module.exports =
-  registration: registration
+  registration:    registration
+  defaults:        config.defaults
+  placeholder:     config.placeholder
+  validate:        config.validate

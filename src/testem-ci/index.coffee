@@ -20,9 +20,9 @@ _execWindowsIsAwesome = (config, next) ->
     fs.mkdirSync mimosaTempDir
 
   outFile = path.join mimosaTempDir, "testemsimpleoutput"
-  testemCiCommand = testemCiCommand + " > " + outFile
+  command = testemCiCommand + " --file " + config.testemSimple.configFile + " > " + outFile
 
-  exec testemCiCommand, (error, stdout) ->
+  exec command, (error, stdout) ->
     if fs.existsSync outFile
       # stdout not reliable, reading it from log file
       stdout = fs.readFileSync outFile, "utf8"
@@ -34,7 +34,8 @@ _execWindowsIsAwesome = (config, next) ->
     next()
 
 _exec = (config, next) ->
-  exec testemCiCommand, (error, stdout) ->
+  command = testemCiCommand + " --file " + config.testemSimple.configFile
+  exec command, (error, stdout) ->
     _processOutput stdout, config, error
     next()
 
