@@ -4,7 +4,7 @@ ci = require './testem-ci'
 config = require './config'
 
 registration = (mimosaConfig, register) ->
-  if mimosaConfig.isBuild or mimosaConfig.isWatch
+  if (mimosaConfig.isBuild or mimosaConfig.isWatch) and not mimosaConfig.isOptimize
     e = mimosaConfig.extensions
     register ['postBuild'], 'beforePackage', _runTests
     register ['add','update','remove'], 'afterOptimize', _runTests, [e.javascript..., e.template...]
