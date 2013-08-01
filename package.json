@@ -1,6 +1,6 @@
 {
   "name": "mimosa-testem-simple",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "homepage": "https://github.com/dbashford/mimosa-testem-simple",
   "author": "David Bashford",
   "description": "A simple testem integration Mimosa module",
@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "logmimosa": "0.5.0",
-    "testem": "0.3.16"
+    "testem": "0.3.23"
   },
   "main": "./lib/index",
   "scripts": {
