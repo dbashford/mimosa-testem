@@ -7,7 +7,7 @@ A simple testem integration module for Mimosa
 
 This module will involve itself in Mimosa's `build` and `watch` commands and execute your existing testem suite on startup and when JavaScript assets are saved.
 
-For more information regarding Mimosa, see http://mimosajs.com
+For more information regarding Mimosa, see http://mimosa.io
 
 ## Usage
 
