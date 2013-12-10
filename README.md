@@ -28,6 +28,8 @@ This module assumes an existing testem suite with all the necessary files in pla
 ```
   testemSimple:
     configFile: "testem.json"
+    port: null
 ```
 
-* 'configFile': the path from the root of the mimosa application to the testem configuraiton file.
+* `configFile`: the path from the root of the mimosa application to the testem configuraiton file.
+* `port`: port to run the ci server on. If you re running ci and non-ci at the same time, this setting allows you to avoid running on same port

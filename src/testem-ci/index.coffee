@@ -9,6 +9,8 @@ testemCiCommand = path.join(__filename, "../../../node_modules/.bin/testem") + "
 
 module.exports = (config, next) ->
   command = testemCiCommand + " --file " + config.testemSimple.configFile
+  if config.testemSimple.port
+    command += " --port " + config.testemSimple.port
   exec command, (error, stdout) ->
     testsPassed = testUtil.parseTestsSuccessful( stdout )
     if error

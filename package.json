@@ -1,6 +1,6 @@
 {
   "name": "mimosa-testem-simple",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "homepage": "https://github.com/dbashford/mimosa-testem-simple",
   "author": "David Bashford",
   "description": "A simple testem integration Mimosa module",
