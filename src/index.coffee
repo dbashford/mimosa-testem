@@ -29,7 +29,6 @@ _runTests = (mimosaConfig, options, next) ->
 _watchTestsSource = (mimosaConfig, options, next) =>
   watcher = null
 
-  localConfig = _.clone(mimosaConfig, true)
   ignoreFunct = (name) ->
     if mimosaConfig.testemSimple.excludeRegex?
       return true if name.match(mimosaConfig.testemSimple.excludeRegex)
