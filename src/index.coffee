@@ -36,7 +36,6 @@ _watchTestsSource = (mimosaConfig, options, next) =>
       return true if mimosaConfig.testemSimple.exclude.indexOf(name) > -1
     false
 
-  logger.info ""
   if _.isString(mimosaConfig.testemSimple.watch)
     mimosaConfig.testemSimple.watch = [ mimosaConfig.testemSimple.watch ]
 

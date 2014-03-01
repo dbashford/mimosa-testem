@@ -14,22 +14,20 @@ exports.placeholder = ->
   """
   \t
 
-    # testemSimple:               # Configuration for the testem-simple module
-      # configFile: "testem.json" # path from the root of the mimosa application to the testem
-                                  # config file.
-      # port: null                # port to run the ci server on. If you re running ci and non-ci
-                                  # at the same time, this setting allows you to avoid running on
-                                  # same port
+    testemSimple:               # Configuration for the testem-simple module
+      configFile: "testem.json" # path from the root of the mimosa application to the testem
+                                # config file.
+      port: null                # port to run the ci server on. If you re running ci and non-ci
+                                # at the same time, this setting allows you to avoid running on
+                                # same port
 
-      ###
-      # "watch" is an array of strings, folders and files whose contents trigger re-running all tests when
-      # they are changed.  Can be relative to the base of the project or can be absolute
-      ###
-      # watch: []
-      # exclude:[]           # An array of regexs or strings that match files to exclude from
-                             # re-running the tests. Can be a mix of regex and strings. Strings
-                             # should be a path relative to the base of the project (location of
-                             # mimosa-config) or absolute. ex: [/\.txt$/,"src/README.md"]
+      watch: []         # "watch" is an array of strings, folders and files whose contents
+                        # trigger re-running all tests when they are changed.  Can be relative
+                        # to the base of the project or can be absolute
+      exclude:[]        # An array of regexs or strings that match files to exclude from
+                        # re-running the tests. Can be a mix of regex and strings. Strings
+                        # should be a path relative to the base of the project (location of
+                        # mimosa-config) or absolute. ex: [/\.txt$/,"src/README.md"]
 
   """
 
