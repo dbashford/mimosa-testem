@@ -29,7 +29,11 @@ This module assumes an existing testem suite with all the necessary files in pla
   testemSimple:
     configFile: "testem.json"
     port: null
+    watch: []
+    exclude: []
 ```
 
 * `configFile`: the path from the root of the mimosa application to the testem configuraiton file.
 * `port`: port to run the ci server on. If you re running ci and non-ci at the same time, this setting allows you to avoid running on same port
+* `watch` : an array of strings, folders and files whose contents trigger re-running all tests when they are changed. Can be relative to the base of the project or can be absolute
+* `exclude`: An array of regexs or strings that match files to exclude from re-running the tests. Can be a mix of regex and strings. Strings should be a path relative to the base of the project (location of mimosa-config) or absolute. ex: `[/\.txt$/,"src/README.md"]`
