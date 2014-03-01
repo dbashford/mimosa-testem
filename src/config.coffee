@@ -22,12 +22,12 @@ exports.placeholder = ->
                                   # same port
 
       ###
-      # "watch" is an array of strings, folders and files whose contents trigger a server reload when
+      # "watch" is an array of strings, folders and files whose contents trigger re-running all tests when
       # they are changed.  Can be relative to the base of the project or can be absolute
       ###
-      # watch: ["server.coffee", "server.js", "server.ls", "server.iced", "routes", "src", "lib"]
+      # watch: []
       # exclude:[]           # An array of regexs or strings that match files to exclude from
-                             # reloading the server. Can be a mix of regex and strings. Strings
+                             # re-running the tests. Can be a mix of regex and strings. Strings
                              # should be a path relative to the base of the project (location of
                              # mimosa-config) or absolute. ex: [/\.txt$/,"src/README.md"]
 
