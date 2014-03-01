@@ -23,7 +23,9 @@
     "phantomjs"
   ],
   "dependencies": {
-    "testem": "0.6.1"
+    "testem": "0.6.1",
+    "chokidar": "^0.8.1",
+    "lodash": "^2.4.1"
   },
   "main": "./lib/index",
   "scripts": {
