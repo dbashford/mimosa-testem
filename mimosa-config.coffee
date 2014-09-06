@@ -1,12 +1,19 @@
-exports.config =
-  modules: ["jshint", "coffeescript"]
-  coffeescript:
-    options:
-      sourceMap: false
-  watch:
-    sourceDir: "src"
-    compiledDir: "lib"
+exports.config = {
+  modules: ["eslint", "copy"],
+  watch: {
+    sourceDir: "src",
+    compiledDir: "lib",
     javascriptDir: null
-  jshint:
-    rules:
-      node: true
+  },
+  eslint: {
+    options: {
+      rules: {
+        "no-global-strict": 0,
+        "no-underscore-dangle": 0
+      },
+      env: {
+        node: true
+      }
+    }
+  }
+}

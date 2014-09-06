@@ -1,6 +1,6 @@
 {
   "name": "mimosa-testem-simple",
-  "version": "0.9.2",
+  "version": "1.0.0",
   "homepage": "https://github.com/dbashford/mimosa-testem-simple",
   "author": "David Bashford",
   "description": "A simple testem integration Mimosa module",
@@ -23,11 +23,10 @@
     "phantomjs"
   ],
   "dependencies": {
-    "testem": "0.6.17",
-    "chokidar": "0.8.1",
-    "lodash": "2.4.1"
+    "testem": "0.6.18",
+    "chokidar": "0.8.1"
   },
-  "main": "./lib/index",
+  "main": "./src/index",
   "scripts": {
     "prepublish": "mimosa build"
   },
