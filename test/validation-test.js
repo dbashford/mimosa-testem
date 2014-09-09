@@ -83,11 +83,17 @@ test("bad-config3", "when all config settings are bad, 3", expected3);
 
 var expected4 =
   "";
-test("not-really-bad-config4", "when all config settings are bad, 4", expected4);
+test("not-really-bad-config4", "when all config settings are null (won't error out), 4", expected4);
 
 var expected5 =
   " * testemSimple.configFile must be a string or an array of strings\n" +
   " * testemSimple.watch must be an array of strings.\n" +
   " * testemSimple.exclude must be an array of strings and/or regexes. \n";
-test("bad-config5", "when testem-simple is an empty object and the defaults are used, 5", expected5);
+test("bad-config5", "when all the arrays have wrong values, 5", expected5);
 
+var expected6 =
+  " * testemSimple.configFile must be a string or an array of strings\n" +
+  " * testemSimple.watch must be an array of strings.\n" +
+  " * testemSimple.watch must be an array of strings.\n" +
+  " * testemSimple.exclude must be an array of strings and/or regexes. \n";
+test("bad-config6", "when the arrays have right and wrong values, 6", expected6);
