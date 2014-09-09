@@ -55,7 +55,7 @@ var test = function( config, itDesc, expected, project ) {
     });
 
     after(function() {
-      // utils.cleanProject( env );
+      utils.cleanProject( env );
     });
 
     it( itDesc, function() {
@@ -68,4 +68,26 @@ var test = function( config, itDesc, expected, project ) {
 var expected1 =
   " * testemSimple config must be an object. \n";
 test("bad-config1", "when testem-simple is null, 1", expected1);
+
+// project doesn't have a file at that location
+var expected2 =
+  " * Cannot resolve location of testemSimple.configFile, \u001b[36mtestem.json\u001b[0m \n";
+test("bad-config2", "when testem-simple is an empty object and the defaults are used, 2", expected2);
+
+var expected3 =
+  " * testemSimple.port must be a number.\n" +
+  " * testemSimple.configFile must be a string or an array of strings\n" +
+  " * testemSimple.watch must be an array.\n" +
+  " * testemSimple.exclude must be an array \n";
+test("bad-config3", "when all config settings are bad, 3", expected3);
+
+var expected4 =
+  "";
+test("not-really-bad-config4", "when all config settings are bad, 4", expected4);
+
+var expected5 =
+  " * testemSimple.configFile must be a string or an array of strings\n" +
+  " * testemSimple.watch must be an array of strings.\n" +
+  " * testemSimple.exclude must be an array of strings and/or regexes. \n";
+test("bad-config5", "when testem-simple is an empty object and the defaults are used, 5", expected5);
 

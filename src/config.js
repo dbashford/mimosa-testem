@@ -89,6 +89,8 @@ exports.validate = function (config, validators) {
       } else {
         errors.push( "testemSimple.watch must be an array." );
       }
+    } else {
+      config.testemSimple.watch = [];
     }
 
     validators.ifExistsFileExcludeWithRegexAndString(errors, "testemSimple.exclude", config.testemSimple, config.root);
