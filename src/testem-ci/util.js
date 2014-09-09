@@ -12,11 +12,11 @@ var _parseTestCount = function( str, regex ) {
 };
 
 exports.parseTestsSuccessful = function( str ) {
-  _parseTestCount( str, /# pass \s+[0-9]+/ );
+  return _parseTestCount( str, /# pass \s+[0-9]+/ );
 };
 
 exports.parseTestsFailed = function( str ) {
-  _parseTestCount( str, /# fail \s+[0-9]+/ );
+  return _parseTestCount( str, /# fail \s+[0-9]+/ );
 };
 
 exports.craftErrorOutput = function( stdout ) {

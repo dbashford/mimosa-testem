@@ -59,7 +59,7 @@ exports.validate = function (config, validators) {
     } else {
       config.testemSimple.configFile.forEach( function( configFile ) {
         configFile = path.join( config.root, configFile );
-        if ( fs.existsSync( config.testemSimple.configFile ) ) {
+        if ( fs.existsSync( configFile ) ) {
           try {
             require( configFile );
           } catch ( err ) {
