@@ -27,8 +27,15 @@
     "chokidar": "0.8.1",
     "async": "0.9.0"
   },
+  "devDependencies": {
+    "mocha": "1.9.0",
+    "chai": "1.5.0",
+    "rimraf": "2.2.8",
+    "wrench": "1.5.8"
+  },
   "main": "./src/index",
   "scripts": {
+    "test": "node_modules/.bin/mocha",
     "prepublish": "mimosa build"
   },
   "license": "MIT",
