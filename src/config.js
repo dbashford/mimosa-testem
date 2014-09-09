@@ -36,7 +36,8 @@ exports.placeholder = function() {
 exports.validate = function (config, validators) {
 
   var errors = [];
-  if ( validators.ifExistsIsObject(errors, "testemSimple config", config.testemSimple) ) {
+  if ( validators.isObject(errors, "testemSimple config", config.testemSimple) ) {
+
     validators.ifExistsIsNumber(errors, "testemSimple.port", config.testemSimple.port);
 
     var configFileError = false;

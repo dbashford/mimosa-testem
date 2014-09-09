@@ -22,7 +22,7 @@ describe('Will execute tests', function() {
   });
 
   after(function() {
-    // utils.cleanProject( env );
+    utils.cleanProject( env );
   });
 
   it( "for a single config", function() {
