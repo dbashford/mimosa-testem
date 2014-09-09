@@ -5,8 +5,8 @@ var exec = require( "child_process" ).exec
   , testUtil = require( "./util" )
   , testemCiCommand = path.join( __filename, "../../../node_modules/.bin/testem" ) + " ci";
 
-module.exports = function( config, next ) {
-  var command = testemCiCommand + " --file " + config.testemSimple.configFile;
+var _runTests = function( config, configFile, done) {
+  var command = testemCiCommand + " --file " + configFile;
   if( config.testemSimple.port ) {
     command += " --port " + config.testemSimple.port;
   }
@@ -31,6 +31,13 @@ module.exports = function( config, next ) {
         console.log( stdout );
       }
     }
-    next();
+    done();
   });
+};
+
+module.exports = function( config, next ) {
+  var async = require( "async" );
+  async.eachSeries( config.testemSimple.configFile, function( file, callback ) {
+    _runTests( config, file, callback);
+  }, next);
 };
