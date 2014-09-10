@@ -25,7 +25,9 @@ If the current Mimosa run is a `build`, testem-simple will provide a simple one 
 
 If the current Mimosa run is a `watch`, testem-simple will provide a simple one line status, and if there are errors, output the results of the failed tests only.
 
-This module assumes an existing testem suite with all the necessary files in place at the root of the Mimosa project.  This module will not provide any setup or configuration for testem.  [testem-require](https://github.com/dbashford/mimosa-testem-require), testem-qunit](https://github.com/neverfox/mimosa-testem-qunit), and [ember-test](https://github.com/dbashford/mimosa-ember-test) are those modules. They will build all of your configuration for you and then utilize `mimosa-testem-simple` to execute the tests.  Just write tests!
+## Build out your testing config?
+
+This module assumes an existing testem suite with all the necessary files in place at the root of the Mimosa project. This module will not provide any setup or configuration for testem.  [testem-require](https://github.com/dbashford/mimosa-testem-require), testem-qunit](https://github.com/neverfox/mimosa-testem-qunit), and [ember-test](https://github.com/dbashford/mimosa-ember-test) are those modules. They will build all of your configuration for you and then utilize `mimosa-testem-simple` to execute the tests.  Just write tests!
 
 ## Default Config
 
