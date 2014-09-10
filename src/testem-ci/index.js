@@ -16,7 +16,7 @@ var _runTests = function( config, configFile, done) {
     if ( error ) {
       var testsFailed = testUtil.parseTestsFailed( stdout );
       var totalTests = testsFailed + testsPassed;
-      config.log.error( testsFailed + " of " + totalTests + " tests failed." );
+      config.log.error( testsFailed + " of " + totalTests + " tests failed for [[ " + configFile + " ]]." );
       if ( config.isBuild ) {
         /*eslint no-console:0 */
         console.error( stdout );
@@ -25,7 +25,7 @@ var _runTests = function( config, configFile, done) {
         console.error( testUtil.craftErrorOutput( stdout ) );
       }
     } else {
-      config.log.success( testsPassed + " of " + testsPassed + " tests passed." );
+      config.log.success( testsPassed + " of " + testsPassed + " tests passed for [[ " + configFile + " ]]." );
       if ( config.isBuild ) {
         /*eslint no-console:0 */
         console.log( stdout );
