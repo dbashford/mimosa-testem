@@ -75,8 +75,10 @@ describe('Will provide proper messaging', function() {
     utils.cleanProject( env );
   });
 
+  // minimal messaging during watch
   it( "when tests do not fail during watch", function() {
     var textLines = fs.readFileSync( logPath, "utf8" ).split("\n")
     expect( textLines[1].substring(8) ).to.equal( " - \u001b[32mSuccess\u001b[0m - 24 of 24 tests passed for \u001b[36mtest-config/testem.json\u001b[0m." );
+    expect( textLines.length ).to.equal(3)
   });
 });
