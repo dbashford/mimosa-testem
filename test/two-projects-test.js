@@ -28,11 +28,11 @@ describe('Will execute tests and report separately', function() {
   it( "for two configs", function() {
     var errorMsgArray = standardErr.split("\n")
     expect( errorMsgArray[0].substring(8) ).to.equal( " - \u001b[31m\u001b[1mERROR\u001b[0m - 1 of 24 tests failed for \u001b[36mtest-config/testem.json\u001b[0m." );
-    expect( errorMsgArray[46] ).to.equal( "# tests 24" );
-    expect( errorMsgArray[48] ).to.equal( "# fail  1" );
-    expect( errorMsgArray[50].substring(8) ).to.equal( " - \u001b[31m\u001b[1mERROR\u001b[0m - 1 of 24 tests failed for \u001b[36mtest-config/testem2.json\u001b[0m." );
-    expect( errorMsgArray[96] ).to.equal( "# tests 24" );
-    expect( errorMsgArray[98] ).to.equal( "# fail  1" );
+    expect( errorMsgArray[47] ).to.equal( "# tests 24" );
+    expect( errorMsgArray[49] ).to.equal( "# fail  1" );
+    expect( errorMsgArray[51].substring(8) ).to.equal( " - \u001b[31m\u001b[1mERROR\u001b[0m - 1 of 24 tests failed for \u001b[36mtest-config/testem2.json\u001b[0m." );
+    expect( errorMsgArray[98] ).to.equal( "# tests 24" );
+    expect( errorMsgArray[100] ).to.equal( "# fail  1" );
 
   });
 });

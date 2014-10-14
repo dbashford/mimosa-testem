@@ -24,6 +24,11 @@ var _runTests = function( config, configFile, done) {
         /*eslint no-console:0 */
         console.error( testUtil.craftErrorOutput( stdout ) );
       }
+      if ( config.exitOnError ) {
+        /*eslint no-process-exit:0 */
+        process.exit(1);
+        return;
+      }
     } else {
       config.log.success( testsPassed + " of " + testsPassed + " tests passed for [[ " + configFile + " ]]." );
       if ( config.isBuild ) {

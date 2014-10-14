@@ -27,11 +27,11 @@ describe('Will provide proper messaging', function() {
 
   it( "when tests fail", function() {
     var errorMsgArray = standardErr.split("\n")
-    expect( errorMsgArray.indexOf("# tests 24") ).to.equal( 64 );
-    expect( errorMsgArray.indexOf("# pass  21") ).to.equal( 65 );
-    expect( errorMsgArray.indexOf("# fail  3") ).to.equal( 66 );
+    expect( errorMsgArray.indexOf("# tests 24") ).to.equal( 67 );
+    expect( errorMsgArray.indexOf("# pass  21") ).to.equal( 68 );
+    expect( errorMsgArray.indexOf("# fail  3") ).to.equal( 69 );
     expect( errorMsgArray[0].substring(8) ).to.equal( " - \u001b[31m\u001b[1mERROR\u001b[0m - 3 of 24 tests failed for \u001b[36mtest-config/testem.json\u001b[0m." );
     expect( errorMsgArray[4].substring(8) ).to.equal( "    expected false to be true" );
-    expect( errorMsgArray[14].substring(8) ).to.equal( "    expected true to be false" );
+    expect( errorMsgArray[15].substring(8) ).to.equal( "    expected true to be false" );
   });
 });
