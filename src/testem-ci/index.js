@@ -41,8 +41,12 @@ var _runTests = function( config, configFile, done) {
 };
 
 module.exports = function( config, next ) {
-  var async = require( "async" );
-  async.eachSeries( config.testemSimple.configFile, function( file, callback ) {
-    _runTests( config, file, callback);
-  }, next);
+  if ( Array.isArray( config.testemSimple.configFile ) ) {
+    var async = require( "async" );
+    async.eachSeries( config.testemSimple.configFile, function( file, callback ) {
+      _runTests( config, file, callback);
+    }, next);
+  } else {
+    _runTests( config, config.testemSimple.configFile, next );
+  }
 };
