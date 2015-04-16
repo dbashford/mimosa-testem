@@ -27,8 +27,8 @@ describe('Will execute tests', function() {
 
   it( "for a single config", function() {
     var msgArray = standardOut.split("\n")
-    expect( msgArray.indexOf("# tests 24") ).to.equal( 35 );
-    expect( msgArray[8].substring(8) ).to.equal( " - \u001b[32mSuccess\u001b[0m - 24 of 24 tests passed for \u001b[36mtest-config/testem.json\u001b[0m." );
+    expect( msgArray.indexOf("# tests 24") ).to.equal( 38 );
+    expect( msgArray[11].substring(8) ).to.equal( " - \u001b[32mSuccess\u001b[0m - 24 of 24 tests passed for \u001b[36mtest-config/testem.json\u001b[0m." );
   });
 });
 
@@ -58,7 +58,7 @@ describe('Will execute tests', function() {
 
   it( "for a single config with string config for file", function() {
     var msgArray = standardOut.split("\n")
-    expect( msgArray.indexOf("# tests 24") ).to.equal( 35 );
-    expect( msgArray[8].substring(8) ).to.equal( " - \u001b[32mSuccess\u001b[0m - 24 of 24 tests passed for \u001b[36mtest-config/testem.json\u001b[0m." );
+    expect( msgArray.indexOf("# tests 24") ).to.equal( 38 );
+    expect( msgArray[11].substring(8) ).to.equal( " - \u001b[32mSuccess\u001b[0m - 24 of 24 tests passed for \u001b[36mtest-config/testem.json\u001b[0m." );
   });
 });
